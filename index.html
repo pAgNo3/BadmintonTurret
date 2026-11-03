@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Turret Command Hub</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1e1e1e; color: #fff; padding: 20px; }
+        .control-group { background: #2d2d2d; padding: 15px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #3d3d3d;}
+        .bldc-group { border-left: 5px solid #ff4444; }
+        .header-row { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+        input[type=text] { padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: white; }
+        input[type=range] { width: 100%; cursor: pointer; accent-color: #00bfa5; }
+        input[type=number] { width: 70px; padding: 8px; background: #444; color: #fff; border: 1px solid #555; border-radius: 4px; }
+        button { padding: 10px 20px; background: #007acc; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;}
+        button:hover { background: #005999; }
+        button:disabled { background: #555; cursor: not-allowed; }
+        #btnResetCal { background: #555; }
+        #btnResetCal:hover { background: #666; }
+        .readout { font-size: 0.9em; color: #aaa; }
+    </style>
+</head>
+<body>
+    <h2>Turret Command Hub</h2>
+    
+    <div class="control-group">
+        <div class="header-row">
+            <input type="text" id="comPort" value="COM3" placeholder="COM Port">
+            <button id="btnConnect">Connect HC-05</button>
+            <span id="status" style="color: #ff4444; font-weight: bold;">Disconnected</span>
+        </div>
+    </div>
+
+    <div class="control-group header-row">
+        <button id="btnCalibrate" disabled>Calibrate Current as Zero</button>
+        <button id="btnResetCal" disabled>Reset Calibration</button>
+    </div>
+
+    <div class="control-group">
+        <label>Feeder (MG90) - <span class="readout">Rel: <span id="lblFRel">+0.0</span>° | Abs: <span id="lblFAbs">90.0</span>°</span></label><br><br>
+        <div class="header-row">
+            <input type="range" id="sliderF" min="0" max="180" step="0.1" value="90" disabled>
+            <input type="number" id="numF" min="0" max="180" step="0.1" value="90.0" disabled>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label>Yaw (MG995) - <span class="readout">Rel: <span id="lblYRel">+0.0</span>° | Abs: <span id="lblYAbs">90.0</span>°</span></label><br><br>
+        <div class="header-row">
+            <input type="range" id="sliderY" min="0" max="180" step="0.1" value="90" disabled>
+            <input type="number" id="numY" min="0" max="180" step="0.1" value="90.0" disabled>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label>Pitch (MG995) - <span class="readout">Rel: <span id="lblPRel">+0.0</span>° | Abs: <span id="lblPAbs">90.0</span>°</span></label><br><br>
+        <div class="header-row">
+            <input type="range" id="sliderP" min="0" max="180" step="0.1" value="90" disabled>
+            <input type="number" id="numP" min="0" max="180" step="0.1" value="90.0" disabled>
+        </div>
+    </div>
+
+    <div class="control-group bldc-group">
+        <label style="font-weight: bold;">Twin BLDC Propulsion (%)</label><br>
+        <div style="margin: 10px 0;">
+            <input type="checkbox" id="chkSafety" disabled> 
+            <label for="chkSafety">Safety Over-50% (Unchecked = Max 50% Speed)</label>
+        </div>
+        <div class="header-row">
+            <input type="range" id="sliderB" min="0" max="100" step="0.1" value="0" disabled>
+            <input type="number" id="numB" min="0" max="100" step="0.1" value="0.0" disabled>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
