@@ -44,5 +44,11 @@
     - Ceiling lights flash the camera at some spots, making shuttle tracking almost impossible then | Masked out the ceiling light and improvised ROI for finding shuttle after crossing the masked light.
     - Wheel jitter kills the shuttle tracking as it introduces too much noise in absdiff | Using april tags to compare between every other frame and stack every frame on each other perfectly for a stable camera feed for better shuttle tracking.
 <img width="386" height="221" alt="image" src="https://github.com/user-attachments/assets/3a538478-84a8-4e3f-b4ca-a06cdcaa083a" />
-<img width="426" height="240" alt="1112" src="https://github.com/user-attachments/assets/5bfd60d0-9e08-478d-ae09-36887d16b147" />
-<img width="426" height="240" alt="1111" src="https://github.com/user-attachments/assets/bea36109-11e4-4cef-bc48-16f3ca79576b" />
+<img width="386" height="221" alt="1112" src="https://github.com/user-attachments/assets/5bfd60d0-9e08-478d-ae09-36887d16b147" />
+<img width="386" height="221" alt="1111" src="https://github.com/user-attachments/assets/bea36109-11e4-4cef-bc48-16f3ca79576b" />
+
+**Further Work**: 
+- Collect data of intitial velocities and range of the shuttle to train a PINN in order to make the shuttle trajectory prediction robust and make the shooter fully autonomous.
+- Work on Real to Sim analysis pipelines which are able to predict shuttle positions and asses the player while playing them
+
+*Note: Some of the code might not match the pipeline due to active experimentation.
