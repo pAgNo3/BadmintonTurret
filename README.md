@@ -1,8 +1,9 @@
 # BadmintonTurret
 
 **Problem Statement**: To design a shuttlecock shooting robot which may be used to help amateur players without coaches to train cheaply.
+<img width="386" height="221" alt="1112" src="https://github.com/user-attachments/assets/5bfd60d0-9e08-478d-ae09-36887d16b147" />
 
-**Mechanical Design**: 
+# Mechanical Design 
 - The Turret was designed in Fusion360
 - Materials used: PLA, ABS, TPU and rubber (Multiple different designs and materials were tested for the use of the wheels in the dual wheel mechanism to maximize the grip, controllability and health of the shuttlecock)
 - Motors: MG995: Yaw and Pitch Motors | mg90s: Feeder actuation | 1400KV A2212 BLDC paired with Simonk30A esc: Dual wheel shooting mechanism
@@ -17,7 +18,7 @@
 <img width="221" height="386" alt="image" src="https://github.com/user-attachments/assets/58386627-b814-4607-9b19-61a5c479d711" />
 
 
-**Electronics**:
+# Electronics:
 - Microcontroller: Arduino Nano
 - Communication to Laptop: Bluetooth Via HC05
 - Buck Converter: XL4015 (for the servos)
@@ -26,7 +27,7 @@
 <img width="386" height="221" alt="image" src="https://github.com/user-attachments/assets/6f88fba2-1ae3-4b9f-a731-c00d9562256f" />
 
 
-**Pipeline**: 
+# Pipeline 
 1. Arduino Nano covers the whole hardware stack sending the necessary PWM signals to the ESCs and the servo motors.
 2. Camera feed is sent to the laptop via wire (USB 3.0) for the best performance.
 3. Assumption: The bot is placed on the middle of the service line on its court and has no obstacle expected to show up for the next 2 meters until the net apppears.
@@ -44,11 +45,8 @@
     - Ceiling lights flash the camera at some spots, making shuttle tracking almost impossible then | Masked out the ceiling light and improvised ROI for finding shuttle after crossing the masked light.
     - Wheel jitter kills the shuttle tracking as it introduces too much noise in absdiff | Using april tags to compare between every other frame and stack every frame on each other perfectly for a stable camera feed for better shuttle tracking.
 <img width="386" height="221" alt="image" src="https://github.com/user-attachments/assets/3a538478-84a8-4e3f-b4ca-a06cdcaa083a" />
-<img width="386" height="221" alt="1112" src="https://github.com/user-attachments/assets/5bfd60d0-9e08-478d-ae09-36887d16b147" />
 <img width="386" height="221" alt="1111" src="https://github.com/user-attachments/assets/bea36109-11e4-4cef-bc48-16f3ca79576b" />
 
-**Further Work**: 
+# Further Work 
 - Collect data of intitial velocities and range of the shuttle to train a PINN in order to make the shuttle trajectory prediction robust and make the shooter fully autonomous.
 - Work on Real to Sim analysis pipelines which are able to predict shuttle positions and asses the player while playing them
-
-*Note: Some of the code might not match the pipeline due to active experimentation.
