@@ -13,8 +13,8 @@
   3. Using TPU to create the camera mount so that it's flexibility is able to compensate for immense vibrational jitter from the wheels.
 - The shooter stands as 1.52m and the camera stands as 1.32m height.
 - Current shuttle cock capacity: Tested with upto 5 shuttles.
-<img width="443" height="772" alt="image" src="https://github.com/user-attachments/assets/529acefa-ade5-4e5b-8646-d0216c8ebe1d" />
-<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/58386627-b814-4607-9b19-61a5c479d711" />
+<img width="221" height="386" alt="image" src="https://github.com/user-attachments/assets/529acefa-ade5-4e5b-8646-d0216c8ebe1d" />
+<img width="221" height="386" alt="image" src="https://github.com/user-attachments/assets/58386627-b814-4607-9b19-61a5c479d711" />
 
 
 **Electronics**:
@@ -23,7 +23,7 @@
 - Buck Converter: XL4015 (for the servos)
 - Camera: Realsense D435if RGBD Camera (connected to laptop via wire)
 - ESC: Simonk30A
-<img width="1305" height="560" alt="image" src="https://github.com/user-attachments/assets/6f88fba2-1ae3-4b9f-a731-c00d9562256f" />
+<img width="386" height="221" alt="image" src="https://github.com/user-attachments/assets/6f88fba2-1ae3-4b9f-a731-c00d9562256f" />
 
 
 **Pipeline**: 
@@ -43,4 +43,6 @@
 14. Problems and fixes:
     - Ceiling lights flash the camera at some spots, making shuttle tracking almost impossible then | Masked out the ceiling light and improvised ROI for finding shuttle after crossing the masked light.
     - Wheel jitter kills the shuttle tracking as it introduces too much noise in absdiff | Using april tags to compare between every other frame and stack every frame on each other perfectly for a stable camera feed for better shuttle tracking.
-<img width="1600" height="690" alt="image" src="https://github.com/user-attachments/assets/3a538478-84a8-4e3f-b4ca-a06cdcaa083a" />
+<img width="386" height="221" alt="image" src="https://github.com/user-attachments/assets/3a538478-84a8-4e3f-b4ca-a06cdcaa083a" />
+<img width="426" height="240" alt="1112" src="https://github.com/user-attachments/assets/5bfd60d0-9e08-478d-ae09-36887d16b147" />
+<img width="426" height="240" alt="1111" src="https://github.com/user-attachments/assets/bea36109-11e4-4cef-bc48-16f3ca79576b" />
